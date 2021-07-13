@@ -13,6 +13,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 @Entity
 @Table(name = "productos")
 public class Producto implements Serializable{
@@ -31,37 +36,7 @@ public class Producto implements Serializable{
 	@Transient
 	private Integer port;
 	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public Double getPrecio() {
-		return precio;
-	}
-	public void setPrecio(Double precio) {
-		this.precio = precio;
-	}
-	public Date getCreateAt() {
-		return createAt;
-	}
-	public void setCreateAt(Date createAt) {
-		this.createAt = createAt;
-	}
-	
-	public Integer getPort() {
-		return port;
-	}
-	public void setPort(Integer port) {
-		this.port = port;
-	}
+
 
 	private static final long serialVersionUID = 1285454306356845809L;
 
