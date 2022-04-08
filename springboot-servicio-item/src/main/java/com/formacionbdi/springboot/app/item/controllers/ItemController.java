@@ -1,5 +1,6 @@
 package com.formacionbdi.springboot.app.item.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,20 @@ public class ItemController {
 	
 	@GetMapping("/listar")
 	public List<Item> listar(){
-		return itemService.findAll();
+		List<Item> items =new ArrayList<>();
+		try {System.out.println("new message");
+//			items =
+			 itemService.findAll();
+
+		}
+		catch (Exception e) {
+            System.out.println("en catch");
+            System.out.println(e.getMessage());
+            System.out.println("error:"+e);
+           e.printStackTrace();
+//           throw new ProductNotFoundException();
+		}
+		return  items;
 	}
 	
 	@GetMapping("/ver/{id}/cantidad/{cantidad}")
